@@ -12,6 +12,8 @@ const app = express();
 // require database configuration
 require('./configs/db.config');
 
+require('./configs/session.config')(app)
+
 // Middleware Setup
 app.use(logger('dev'));
 app.use(express.json());
@@ -26,12 +28,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 // default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
+app.locals.title = 'PLANTS';
 
 // const index = require('./routes/index');
 // app.use('/', index);
 //      |  |  |
 //      V  V  V
 app.use('/', require('./routes/index.routes'));
-
+app.use('/', require('./routes/auth.routes'));
 module.exports = app;

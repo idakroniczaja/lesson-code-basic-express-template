@@ -1,0 +1,40 @@
+<a href="/profile">Back to search</a>
+
+<br>
+<h1>Most used name:{{singlePlant.data.common_name}}</h1>
+<p>The first year of a valid name: {{singlePlant.data.year}}</p>
+<h2>author: {{singlePlant.data.author}}</h2>
+<h3>Family:{{singlePlant.data.family.name}} AKA: {{singlePlant.data.family_common_name}}</h3>
+<img src="{{singlePlant.data.image_url}}" alt="{{singlePlant.data.common_name}}" width="500px">
+<ol>Other common names
+{{#each singlePlant.data.main_species.common_names.en}}
+<li>{{this}}</li>
+{{/each}}
+</ol>
+
+
+
+<ol>	Zones the species is native from
+{{#each singlePlant.data.main_species.distribution.native}}
+<li>{{this}}</li>
+{{/each}}
+</ol>
+
+
+
+{{#if singlePlant.data.main_species.duration}}
+<p>duration: {{singlePlant.data.main_species.duration}}</p>
+{{/if}}
+<p>edible: {{singlePlant.data.main_species.edible}}</p> 
+
+
+
+<p>A description on how the plant usually grows: {{singlePlant.data.main_species.growth.description}}</p>
+
+<p>	A description on how to sow the plant: {{singlePlant.data.main_species.growth.sowing}}</p>
+<p>The average numbers of days required to from planting to harvest:{{singlePlant.data.main_species.growth.days_to_harvest}}</p> 
+<p>	Required quantity of nutriments in the soil, on a scale from 0 (oligotrophic) to 10 (hypereutrophic):{{singlePlant.data.main_species.growth.soil_nutriments}}</p>
+<p>The relative growth speed of the plant: {{singlePlant.data.main_species.specifications.growth_rate}}</p>
+<p>Required amount of light, on a scale from 0 (no light, <= 10 lux) to 10 (very intensive insolation, >= 100 000 lux) {{singlePlant.data.main_species.growth.light}}</p>
+<p>The months the species usually blooms {{singlePlant.data.main_species.specifications.bloom_months}}</p>
+</p>

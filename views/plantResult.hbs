@@ -1,0 +1,14 @@
+<h2>Total results  {{searchedPlant.meta.total}}</h2>
+<a href="/profile">Back to search</a>
+<h3>First 20 results:</h3>
+
+<ol>
+{{#each searchedPlant.data}}
+<li>
+<h3>Most used name:<a href="/details/{{id}}">{{common_name}}</a> </h3>
+<img src="{{image_url}}" alt="{{common_name}}" width="200px">
+
+</li>
+{{/each}}
+</ol>
+
